@@ -1,0 +1,26 @@
+GNU Binutils for OpenPX-64000 architecture.
+================================================
+
+This repository contains source codes of OpenPX-64k port in the form of "diff" patches.
+
+-------------------------
+To compile with the binutils, firstly you should decompress file "binutils-2.29.tar.gz" to a right place, then apply the patch by commanding:
+
+    $ cd binutils-2.29
+    $ patch -p1 < binutils-2.29.patch
+
+In addition, it would be better to validate the completeness of the package above all:
+
+    $ md5sum binutils-2.29.tar.gz
+
+Build binutils:
+
+    $ mkdir build && cd build
+    $ configure --target={your target} --prefix={your prefix}
+    $ make && make install
+    
+-------------------------
+Supported targets:
+
+    openpx64k-unknown-elf
+    openpx64k-unknown-linux
